@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", (req, res) => {
+    console.log(req.query.name); 
     res.send("User List");
 });
 
@@ -24,7 +25,7 @@ router.post("/",(req, res) => {
 router
 .route("/:id")
 .get((req, res) => {
-    console.log(req.user)
+    console.log(req.user);
     res.send(`Get user with ID ${req.params.id}`);
 })
 .put((req, res) => {
